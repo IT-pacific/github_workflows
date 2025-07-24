@@ -1,0 +1,21 @@
+# first workflow to play around with
+name: My First Workflow
+on:
+   push:
+     branches: 
+       - main
+       - staging
+jobs:
+  job1:
+    name: Build package 1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print to stdout
+        run: echo "Hello world 👋 from ${{ github.actor }}."
+        shell: bash
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+      - name: View fs tree
+        run: tree
+    
+  

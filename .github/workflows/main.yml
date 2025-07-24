@@ -11,7 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print to stdout
-        run: echo "Hello world 👋 from ${{ github.actor }}."
+        run: | 
+           echo "Hello ${{vars.WHO_TO_GREET}} 👋 from ${{ github.actor }}."
+           echo "secret: ${{secrets.MY_SECRET}}"
         shell: bash
       - name: Checkout
         uses: actions/checkout@v4.2.2

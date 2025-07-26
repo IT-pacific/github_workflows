@@ -17,7 +17,7 @@ jobs:
         run: |
           echo "This is me pacific!"
           echo "Running on ubuntu lts"
-      - run: echo "PR title is '${{ github.event.pull_request.title }}'."
+      - run: echo "Hello!!"
   lint_job:
     name: Linting Job
     runs-on: ubuntu-latest

@@ -10,7 +10,7 @@ on:
 jobs:
   first_job:
     name: First job
-    runs-on: ubuntu-lts
+    runs-on: ubuntu-latest
     steps:
       - name: Log context information to terminal
         shell: bash

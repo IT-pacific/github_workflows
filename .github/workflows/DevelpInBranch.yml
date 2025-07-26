@@ -20,7 +20,7 @@ jobs:
       - run: echo "PR title is '${{ github.event.pull_request.title }}'."
   lint_job:
     name: Linting Job
-    runs-on: ubuntu-lts
+    runs-on: ubuntu-latest
     permissions:
       contents: read
       pull-requests: write

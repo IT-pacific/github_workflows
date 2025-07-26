@@ -18,16 +18,16 @@ jobs:
           echo "This is me pacific!"
           echo "Running on ubuntu lts"
       - run: echo "PR title is '${{ github.event.pull_request.title }}'."
-#   lint_job:
-#     name: Linting Job
-#     runs-on: ubuntu-lts
-#     permissions:
-#       contents: read
-#       pull-requests: write
-#     needs: [first_job]
-#     steps:
-#       - name: Checkout code
-#         uses: actions/checkout@v4.1.0
+  lint_job:
+    name: Linting Job
+    runs-on: ubuntu-lts
+    permissions:
+      contents: read
+      pull-requests: write
+    needs: [first_job]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4.1.0
 
-#       - name: Lint repo codes on pr request
-#         uses: devops-actions/actionlint@v0.1.2
+      - name: Lint repo codes on pr request
+        uses: devops-actions/actionlint@v0.1.2

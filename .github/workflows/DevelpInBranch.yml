@@ -1,0 +1,33 @@
+# Simplr workflow
+
+name: Display context information
+run-name: context information
+description: |
+    This workflow is intended to test local environment
+    specifically with vs code.
+on:
+    pull_request:
+        branches:
+            - dev
+
+jobs:
+    first_job:
+        name: First job
+        runs-on: ubuntu-lts
+        steps:
+            - name: Log context information to terminal
+              shell: bash
+              run: echo "This is me pacific!"
+
+   lint_job:
+       name: Linting Job
+       runs-on: ubuntu-lts
+       permissions:
+          contents: read
+          pull-requests: write
+       depends: [first_job]
+       steps:
+           - name: Lint repo codes on pr request
+             shell: bash
+             uses: actions/checkout@v4.1.0
+             uses: devops-actions/actionlint@v0.1.2

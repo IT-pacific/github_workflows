@@ -1,10 +1,6 @@
 # Simple workflow
-
 name: Display context information
 run-name: context information
-description: |
-  This workflow is intended to test local environment
-  specifically with vs code.
 on:
   pull_request:
     branches:
